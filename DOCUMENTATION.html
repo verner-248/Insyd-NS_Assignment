@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insyd Notification System - Complete User Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+        }
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #7f8c8d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .toc {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+        .toc a:hover {
+            color: #3498db;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">📋</span> Insyd Notification System - Complete User Guide</h1>
+        
+        <div class="toc">
+            <h2>📋 Table of Contents</h2>
+            <ul>
+                <li><a href="#overview">1. Overview</a></li>
+                <li><a href="#getting-started">2. Getting Started</a></li>
+                <li><a href="#how-the-app-works">3. How the App Works</a></li>
+                <li><a href="#features-functionality">4. Features & Functionality</a></li>
+                <li><a href="#api-reference">5. API Reference</a></li>
+                <li><a href="#troubleshooting">6. Troubleshooting</a></li>
+                <li><a href="#development-guide">7. Development Guide</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="overview"><span class="emoji">🎯</span> Overview</h2>
+        
+        <p>The <strong>Insyd Notification System</strong> is a real-time social media notification platform designed specifically for the architecture industry. It simulates a social networking platform where architects can share posts, interact with each other, and receive instant notifications for various activities.</p>
+        
+        <h3>What This App Does</h3>
+        <ul>
+            <li><strong>Social Interactions</strong>: Like posts, comment on posts, follow other users</li>
+            <li><strong>Real-time Notifications</strong>: Get instant alerts for all social activities</li>
+            <li><strong>User Management</strong>: Switch between different user profiles</li>
+            <li><strong>Demo Environment</strong>: Pre-loaded with sample data for testing</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="getting-started"><span class="emoji">🚀</span> Getting Started</h2>
+        
+        <h3>Prerequisites</h3>
+        <ul>
+            <li><strong>Node.js</strong> (version 16 or higher)</li>
+            <li><strong>MongoDB</strong> (local installation or MongoDB Atlas account)</li>
+            <li><strong>npm</strong> or <strong>yarn</strong> package manager</li>
+        </ul>
+        
+        <h3>Step 1: Clone and Install</h3>
+        <pre><code># Clone the repository
+git clone &lt;repository-url&gt;
+cd Insyd-Full_Stack_Assignment-main
+
+# Install all dependencies
+npm run install-all</code></pre>
+        
+        <h3>Step 2: Database Setup</h3>
+        
+        <h4>Option A: MongoDB Atlas (Recommended)</h4>
+        <ol>
+            <li>Go to <a href="https://cloud.mongodb.com/" target="_blank">MongoDB Atlas</a></li>
+            <li>Create a free cluster</li>
+            <li>Get your connection string</li>
+            <li>Add your IP address to the whitelist</li>
+        </ol>
+        
+        <h4>Option B: Local MongoDB</h4>
+        <ol>
+            <li>Install MongoDB locally</li>
+            <li>Start MongoDB service</li>
+            <li>Use connection string: <code>mongodb://localhost:27017/insyd-notifications</code></li>
+        </ol>
+        
+        <h3>Step 3: Environment Configuration</h3>
+        <pre><code># Create environment file
+cp .env.example .env
+
+# Edit .env file with your MongoDB connection string
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/insyd-notifications
+PORT=5000
+NODE_ENV=development</code></pre>
+        
+        <h3>Step 4: Start the Application</h3>
+        <pre><code># Start both frontend and backend
+npm run dev
+
+# Or start them separately:
+# Backend only
+npm run server
+
+# Frontend only (in another terminal)
+cd frontend && npm run dev</code></pre>
+        
+        <h3>Step 5: Access the Application</h3>
+        <ul>
+            <li><strong>Frontend</strong>: <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+            <li><strong>Backend API</strong>: <a href="http://localhost:5000" target="_blank">http://localhost:5000</a></li>
+        </ul>
+
+        <hr>
+
+        <h2 id="how-the-app-works"><span class="emoji">🔧</span> How the App Works</h2>
+        
+        <h3>Architecture Overview</h3>
+        <pre>User Interface (Next.js Frontend)
+         ↕️ HTTP Requests
+    Backend API (Node.js/Express)
+         ↕️ Database Operations
+    MongoDB Database</pre>
+        
+        <h3>Data Flow</h3>
+        <ol>
+            <li><strong>User Action</strong>: User performs an action (like, comment, follow)</li>
+            <li><strong>API Request</strong>: Frontend sends request to backend</li>
+            <li><strong>Database Update</strong>: Backend updates relevant data in MongoDB</li>
+            <li><strong>Notification Creation</strong>: System creates notification for affected users</li>
+            <li><strong>Response</strong>: Backend sends response to frontend</li>
+            <li><strong>UI Update</strong>: Frontend updates the interface</li>
+        </ol>
+        
+        <h3>Key Components</h3>
+        
+        <h4>Frontend (Next.js)</h4>
+        <ul>
+            <li><strong>Pages</strong>: Main dashboard, user profiles, notifications</li>
+            <li><strong>Components</strong>: Reusable UI components (PostCard, UserCard, NotificationCard)</li>
+            <li><strong>API Integration</strong>: HTTP requests to backend endpoints</li>
+            <li><strong>State Management</strong>: React hooks for local state</li>
+        </ul>
+        
+        <h4>Backend (Node.js/Express)</h4>
+        <ul>
+            <li><strong>Routes</strong>: API endpoints for different operations</li>
+            <li><strong>Models</strong>: MongoDB schemas (User, Post, Notification)</li>
+            <li><strong>Controllers</strong>: Business logic for each operation</li>
+            <li><strong>Middleware</strong>: Authentication, validation, error handling</li>
+        </ul>
+        
+        <h4>Database (MongoDB)</h4>
+        <ul>
+            <li><strong>Users</strong>: User profiles and relationships</li>
+            <li><strong>Posts</strong>: Content shared by users</li>
+            <li><strong>Notifications</strong>: Real-time alerts for user activities</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="features-functionality"><span class="emoji">🎮</span> Features & Functionality</h2>
+        
+        <h3>1. User Management</h3>
+        <ul>
+            <li><strong>Switch Users</strong>: Test the app with different user profiles</li>
+            <li><strong>User Profiles</strong>: View user information, followers, and posts</li>
+            <li><strong>Follow System</strong>: Follow/unfollow other users</li>
+        </ul>
+        
+        <h3>2. Post Interactions</h3>
+        <ul>
+            <li><strong>Create Posts</strong>: Share architecture-related content</li>
+            <li><strong>Like Posts</strong>: Show appreciation for posts</li>
+            <li><strong>Comment on Posts</strong>: Engage in discussions</li>
+            <li><strong>View Post Details</strong>: See likes, comments, and engagement</li>
+        </ul>
+        
+        <h3>3. Notification System</h3>
+        <ul>
+            <li><strong>Real-time Alerts</strong>: Get notified instantly for all activities</li>
+            <li><strong>Notification Types</strong>:
+                <ul>
+                    <li><strong>Like Notifications</strong>: When someone likes your post</li>
+                    <li><strong>Comment Notifications</strong>: When someone comments on your post</li>
+                    <li><strong>Follow Notifications</strong>: When someone follows you</li>
+                    <li><strong>Post Notifications</strong>: When someone you follow creates a post</li>
+                    <li><strong>Trending Notifications</strong>: When posts become popular</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>4. Demo Features</h3>
+        <ul>
+            <li><strong>Pre-loaded Data</strong>: Sample users and posts for testing</li>
+            <li><strong>Interactive Demo</strong>: Real-time simulation of social interactions</li>
+            <li><strong>User Switching</strong>: Test different perspectives</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="api-reference"><span class="emoji">📚</span> API Reference</h2>
+        
+        <h3>Base URL</h3>
+        <pre>http://localhost:5000/api/v1</pre>
+        
+        <h3>Authentication</h3>
+        <p>Currently, the app uses simple user IDs for demo purposes. In production, this would be replaced with JWT tokens.</p>
+        
+        <h3>Endpoints</h3>
+        
+        <h4>Users</h4>
+        <pre>GET /users
+GET /users/:userId
+GET /users/:userId/posts
+GET /users/:userId/followers
+GET /users/:userId/following</pre>
+        
+        <h4>Posts</h4>
+        <pre>GET /posts
+GET /posts/:postId
+POST /posts
+PATCH /posts/:postId
+DELETE /posts/:postId</pre>
+        
+        <h4>Notifications</h4>
+        <pre>GET /notifications/:userId
+PATCH /notifications/:notificationId/read
+PATCH /notifications/:userId/read-all</pre>
+        
+        <h4>Events (Actions)</h4>
+        <pre>POST /events/like
+POST /events/comment
+POST /events/follow
+POST /events/unfollow</pre>
+        
+        <h3>Request/Response Examples</h3>
+        
+        <h4>Like a Post</h4>
+        <pre>POST /events/like
+Content-Type: application/json
+
+{
+  "fromUserId": "u2",
+  "postId": "p1"
+}
+
+Response:
+{
+  "success": true,
+  "message": "Post liked successfully",
+  "notification": {
+    "id": "n123",
+    "type": "like",
+    "message": "u2 liked your post"
+  }
+}</pre>
+        
+        <h4>Get User Notifications</h4>
+        <pre>GET /notifications/u1?page=1&limit=10&unreadOnly=false
+
+Response:
+{
+  "notifications": [
+    {
+      "id": "n123",
+      "type": "like",
+      "message": "u2 liked your post",
+      "isRead": false,
+      "createdAt": "2025-01-10T14:00:00Z"
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "limit": 10,
+    "total": 25
+  }
+}</pre>
+
+        <hr>
+
+        <h2 id="troubleshooting"><span class="emoji">🔍</span> Troubleshooting</h2>
+        
+        <h3>Common Issues and Solutions</h3>
+        
+        <h4>1. Database Connection Error</h4>
+        <div class="warning">
+            <strong>Error</strong>: <code>MongooseServerSelectionError: Could not connect to any servers</code>
+        </div>
+        
+        <p><strong>Solution</strong>:</p>
+        <ol>
+            <li>Check your MongoDB connection string in <code>.env</code></li>
+            <li>Ensure MongoDB Atlas IP whitelist includes your IP</li>
+            <li>Verify network connectivity</li>
+        </ol>
+        
+        <pre><code># Test MongoDB connection
+node -e "
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Connection failed:', err));
+"</code></pre>
+        
+        <h4>2. Port Already in Use</h4>
+        <div class="warning">
+            <strong>Error</strong>: <code>EADDRINUSE: address already in use :::5000</code>
+        </div>
+        
+        <p><strong>Solution</strong>:</p>
+        <pre><code># Find and kill process using port 5000
+netstat -ano | findstr :5000
+taskkill /PID &lt;PID&gt; /F
+
+# Or change port in .env
+PORT=5001</code></pre>
+        
+        <h4>3. Frontend Build Errors</h4>
+        <div class="warning">
+            <strong>Error</strong>: <code>Module not found</code> or build failures
+        </div>
+        
+        <p><strong>Solution</strong>:</p>
+        <pre><code># Clear cache and reinstall
+cd frontend
+rm -rf node_modules package-lock.json
+npm install
+npm run build</code></pre>
+        
+        <h4>4. API CORS Errors</h4>
+        <div class="warning">
+            <strong>Error</strong>: <code>Access to fetch at 'http://localhost:5000' from origin 'http://localhost:3000' has been blocked by CORS policy</code>
+        </div>
+        
+        <p><strong>Solution</strong>: The backend is already configured with CORS. If you still get errors:</p>
+        <ol>
+            <li>Check that backend is running on port 5000</li>
+            <li>Verify CORS configuration in <code>backend/server.js</code></li>
+            <li>Clear browser cache</li>
+        </ol>
+        
+        <h3>Performance Issues</h3>
+        
+        <h4>Slow Loading</h4>
+        <ol>
+            <li><strong>Check Database Indexes</strong>: Ensure MongoDB indexes are created</li>
+            <li><strong>Reduce Data Load</strong>: Implement pagination</li>
+            <li><strong>Optimize Queries</strong>: Use database aggregation</li>
+        </ol>
+        
+        <h4>Memory Issues</h4>
+        <ol>
+            <li><strong>Monitor Node.js Memory</strong>: Use <code>--max-old-space-size=4096</code></li>
+            <li><strong>Database Connection Pool</strong>: Limit concurrent connections</li>
+            <li><strong>Garbage Collection</strong>: Monitor heap usage</li>
+        </ol>
+
+        <hr>
+
+        <h2 id="development-guide"><span class="emoji">🛠️</span> Development Guide</h2>
+        
+        <h3>Project Structure</h3>
+        <pre>Insyd-Full_Stack_Assignment-main/
+├── backend/
+│   ├── models/          # MongoDB schemas
+│   ├── routes/          # API endpoints
+│   ├── seeders/         # Sample data
+│   └── server.js        # Main server file
+├── frontend/
+│   ├── components/      # React components
+│   ├── pages/          # Next.js pages
+│   ├── lib/            # Utilities and API calls
+│   └── styles/         # CSS and styling
+├── package.json         # Root dependencies
+└── README.md           # Project overview</pre>
+        
+        <h3>Adding New Features</h3>
+        
+        <h4>1. New API Endpoint</h4>
+        <pre><code>// backend/routes/newFeature.js
+const express = require('express');
+const router = express.Router();
+
+router.get('/new-endpoint', async (req, res) => {
+  try {
+    // Your logic here
+    res.json({ success: true, data: result });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+module.exports = router;</code></pre>
+        
+        <h4>2. New Frontend Component</h4>
+        <pre><code>// frontend/components/NewComponent.jsx
+import React from 'react';
+
+const NewComponent = ({ data }) => {
+  return (
+    &lt;div className="new-component"&gt;
+      {/* Your JSX here */}
+    &lt;/div&gt;
+  );
+};
+
+export default NewComponent;</code></pre>
+        
+        <h4>3. Database Schema Changes</h4>
+        <pre><code>// backend/models/NewModel.js
+const mongoose = require('mongoose');
+
+const newModelSchema = new mongoose.Schema({
+  field1: { type: String, required: true },
+  field2: { type: Number, default: 0 },
+  createdAt: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('NewModel', newModelSchema);</code></pre>
+        
+        <h3>Testing</h3>
+        
+        <h4>Manual Testing Checklist</h4>
+        <ul>
+            <li>[ ] User registration/login</li>
+            <li>[ ] Post creation and editing</li>
+            <li>[ ] Like/unlike functionality</li>
+            <li>[ ] Comment system</li>
+            <li>[ ] Follow/unfollow users</li>
+            <li>[ ] Notification generation</li>
+            <li>[ ] Notification reading/marking as read</li>
+            <li>[ ] User switching</li>
+            <li>[ ] Responsive design</li>
+        </ul>
+        
+        <h4>API Testing</h4>
+        <pre><code># Test endpoints with curl
+curl -X GET http://localhost:5000/api/v1/users
+curl -X POST http://localhost:5000/api/v1/events/like \
+  -H "Content-Type: application/json" \
+  -d '{"fromUserId":"u1","postId":"p1"}'</code></pre>
+        
+        <h3>Deployment</h3>
+        
+        <h4>Frontend (Vercel)</h4>
+        <pre><code>cd frontend
+npm run build
+# Deploy to Vercel</code></pre>
+        
+        <h4>Backend (Railway/Render)</h4>
+        <pre><code># Set environment variables
+# Deploy backend to Railway or Render</code></pre>
+        
+        <h4>Database (MongoDB Atlas)</h4>
+        <ol>
+            <li>Create production cluster</li>
+            <li>Set up database indexes</li>
+            <li>Configure connection string</li>
+            <li>Set up monitoring and alerts</li>
+        </ol>
+
+        <hr>
+
+        <h2><span class="emoji">📊</span> Monitoring and Analytics</h2>
+        
+        <h3>Key Metrics to Track</h3>
+        <ul>
+            <li><strong>User Engagement</strong>: Daily active users, session duration</li>
+            <li><strong>Notification Performance</strong>: Delivery rates, read rates</li>
+            <li><strong>API Performance</strong>: Response times, error rates</li>
+            <li><strong>Database Performance</strong>: Query times, connection usage</li>
+        </ul>
+        
+        <h3>Logging</h3>
+        <pre><code>// Add logging to your endpoints
+const logger = require('morgan');
+app.use(logger('combined'));</code></pre>
+        
+        <h3>Error Tracking</h3>
+        <pre><code>// Global error handler
+app.use((error, req, res, next) => {
+  console.error('Error:', error);
+  res.status(500).json({ error: 'Internal server error' });
+});</code></pre>
+
+        <hr>
+
+        <h2><span class="emoji">🤝</span> Contributing</h2>
+        
+        <h3>Development Workflow</h3>
+        <ol>
+            <li><strong>Fork</strong> the repository</li>
+            <li><strong>Create</strong> a feature branch</li>
+            <li><strong>Make</strong> your changes</li>
+            <li><strong>Test</strong> thoroughly</li>
+            <li><strong>Commit</strong> with descriptive messages</li>
+            <li><strong>Push</strong> to your branch</li>
+            <li><strong>Create</strong> a Pull Request</li>
+        </ol>
+        
+        <h3>Code Standards</h3>
+        <ul>
+            <li>Use <strong>ESLint</strong> for code formatting</li>
+            <li>Follow <strong>conventional commits</strong></li>
+            <li>Write <strong>comprehensive tests</strong></li>
+            <li>Update <strong>documentation</strong></li>
+        </ul>
+
+        <hr>
+
+        <h2><span class="emoji">📞</span> Support</h2>
+        
+        <h3>Getting Help</h3>
+        <ol>
+            <li><strong>Check this documentation</strong> first</li>
+            <li><strong>Review the README.md</strong> for project overview</li>
+            <li><strong>Search existing issues</strong> on GitHub</li>
+            <li><strong>Create a new issue</strong> with detailed information</li>
+        </ol>
+        
+        <h3>Issue Template</h3>
+        <p>When reporting issues, include:</p>
+        <ul>
+            <li><strong>Environment</strong>: OS, Node.js version, MongoDB version</li>
+            <li><strong>Steps to reproduce</strong>: Detailed step-by-step instructions</li>
+            <li><strong>Expected behavior</strong>: What should happen</li>
+            <li><strong>Actual behavior</strong>: What actually happens</li>
+            <li><strong>Error messages</strong>: Full error logs</li>
+            <li><strong>Screenshots</strong>: If applicable</li>
+        </ul>
+
+        <hr>
+
+        <h2><span class="emoji">📝</span> License</h2>
+        
+        <p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
+
+        <hr>
+
+        <h2><span class="emoji">🙏</span> Acknowledgments</h2>
+        
+        <ul>
+            <li>Built for the Insyd Architecture Community</li>
+            <li>Inspired by modern social media platforms</li>
+            <li>Designed for scalability and performance</li>
+        </ul>
+
+        <hr>
+
+        <div class="success">
+            <h2><span class="emoji">🚀</span> Happy Coding!</h2>
+            <p>For questions or support, please open an issue in the repository or contact the development team.</p>
+        </div>
+    </div>
+</body>
+</html> 
