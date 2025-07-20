@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+const API_BASE_URL = 'https://insyd-ns-assignment.onrender.com/api/v1';
 
 // Create axios instance with default config
 const api = axios.create({
