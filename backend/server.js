@@ -31,8 +31,11 @@ app.use('/api/', limiter);
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
+  origin: [
+    'http://localhost:3000', // local dev
+    'https://insyd-ns-assignment.vercel.app' // deployed frontend
+  ],
+  credentials: true // if you use cookies/auth
 }));
 
 app.use(express.json({ limit: '10mb' }));
