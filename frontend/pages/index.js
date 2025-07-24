@@ -67,6 +67,7 @@ export default function Home() {
     setIsLoading(true);
     try {
       const data = await userAPI.getUsers();
+      console.log('Fetched users data:', data); // 👀 Debug log
       setUsers(data.users || []);
       // Set first user as default if no user is selected
       if (data.users && data.users.length > 0 && !currentUserId) {
